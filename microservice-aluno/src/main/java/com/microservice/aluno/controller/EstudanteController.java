@@ -19,7 +19,7 @@ public class EstudanteController {
     public void saveEstudante(@RequestBody Estudante estudante){
         estudanteService.save(estudante);
     }
-    
+
     @GetMapping("/all")
     public ResponseEntity<?> findAllEstudante(){
         return ResponseEntity.ok(estudanteService.findAll());
