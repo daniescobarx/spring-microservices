@@ -11,5 +11,5 @@ public interface ICursoService {
     Curso findById(Long id);
 
     void save(Curso curso);
-    
+
 }
