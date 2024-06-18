@@ -10,6 +10,7 @@
         <module name="microservice-gateway" />
         <module name="microservice-aluno" />
         <module name="microservice-eureka" />
+        <module name="microservice-curso" />
         <module name="microservice-config" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="microservice-aluno" options="-parameters" />
       <module name="microservice-config" options="-parameters" />
+      <module name="microservice-curso" options="-parameters" />
       <module name="microservice-eureka" options="-parameters" />
       <module name="microservice-gateway" options="-parameters" />
     </option>
