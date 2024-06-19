@@ -1,10 +1,9 @@
 package com.microservice.curso.service;
 
-import com.microservice.curso.client.EstudanteClient;
+import com.microservice.curso.client.AlunoClient;
 import com.microservice.curso.dto.AlunoDTO;
 import com.microservice.curso.entities.Curso;
 import com.microservice.curso.http.response.AlunoByCursoResponse;
-import com.microservice.curso.http.response.EstudanteByCursoResponse;
 import com.microservice.curso.persistence.ICursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,12 +14,12 @@ import java.util.List;
 public class CursoServiceImpl implements ICursoService {
 
     private final ICursoRepository cursoRepository;
-    private final EstudanteClient estudanteClient;
+    private final AlunoClient alunoClient;
 
     @Autowired
-    public CursoServiceImpl(ICursoRepository cursoRepository, EstudanteClient estudanteClient) {
+    public CursoServiceImpl(ICursoRepository cursoRepository, AlunoClient alunoClient) {
         this.cursoRepository = cursoRepository;
-        this.estudanteClient = estudanteClient;
+        this.alunoClient = alunoClient;
     }
 
     @Override
@@ -39,14 +38,14 @@ public class CursoServiceImpl implements ICursoService {
     }
 
     @Override
-    public AlunoByCursoResponse findEstudantesByIdCurso(Long idCurso) {
+    public AlunoByCursoResponse findAlunosByIdCurso(Long idCurso) {
         //consulta do curso
         Curso curso = cursoRepository.findById(idCurso).orElse(new Curso());
 
         //estudantes list
-        List<AlunoDTO> estudanteDTOList = estudanteClient.findAllEstudanteByCurso(idCurso);
+        List<AlunoDTO> estudanteDTOList = alunoClient.findAllEstudanteByCurso(idCurso);
 
-        return EstudanteByCursoResponse.builder()
+        return AlunoByCursoResponse.builder()
                 .nomeCurso(curso.getNome())
                 .professor(curso.getProfessor())
                 .estudanteDTOList(estudanteDTOList)
