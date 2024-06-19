@@ -31,5 +31,11 @@ public class CursoController {
         return ResponseEntity.ok(cursoService.findById(id));
     }
 
+    @GetMapping("/search-aluno/{idCurso}")
+    public ResponseEntity<?> findAlunoByIdCurso(@PathVariable Long idCurso){
+        return ResponseEntity.ok(cursoService.findAlunosByIdCurso(idCurso));
+    }
+
+
 
 }
