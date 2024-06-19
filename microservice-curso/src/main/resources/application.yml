@@ -5,15 +5,15 @@ spring:
   application:
     name: msvc-curso
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/cursoDb
-    username: postgres
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cursoDb
+    username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: create
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
   config:
     import: optional:configserver:http://localhost:8888
 
