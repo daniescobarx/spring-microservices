@@ -30,8 +30,8 @@ public class AlunoController {
         return ResponseEntity.ok(alunoService.findByid(id));
     }
 
-    @GetMapping("/search-by-curso/{idCurso}")
-    public ResponseEntity<?> findByIdCurso(@PathVariable Long idCurso){
-        return ResponseEntity.ok(alunoService.findByIdCurso(idCurso));
+    @GetMapping("/search-by-curso/{cursoId}")
+    public ResponseEntity<?> findBycursoId(@PathVariable Long cursoId){
+        return ResponseEntity.ok(alunoService.findBycursoId(cursoId));
     }
 }

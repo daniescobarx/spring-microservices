@@ -38,12 +38,12 @@ public class CursoServiceImpl implements ICursoService {
     }
 
     @Override
-    public AlunoByCursoResponse findAlunosByIdCurso(Long idCurso) {
+    public AlunoByCursoResponse findAlunosBycursoId(Long cursoId) {
         //consulta do curso
-        Curso curso = cursoRepository.findById(idCurso).orElse(new Curso());
+        Curso curso = cursoRepository.findById(cursoId).orElse(new Curso());
 
         //estudantes list
-        List<AlunoDTO> alunoDTOList = alunoClient.findAllAlunoByCurso(idCurso);
+        List<AlunoDTO> alunoDTOList = alunoClient.findAllAlunoByCurso(cursoId);
 
         return AlunoByCursoResponse.builder()
                 .nomeCurso(curso.getNome())

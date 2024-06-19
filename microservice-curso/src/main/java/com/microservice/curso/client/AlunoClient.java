@@ -10,6 +10,6 @@ import java.util.List;
 @FeignClient(name = "msvc-aluno", url = "localhost:8090/api/aluno")
 public interface AlunoClient {
 
-    @GetMapping("/search-by-curso/{idCurso}")
-    List<AlunoDTO> findAllAlunoByCurso(@PathVariable Long idCurso);
+    @GetMapping("/search-by-curso/{cursoId}")
+    List<AlunoDTO> findAllAlunoByCurso(@PathVariable Long cursoId);
 }

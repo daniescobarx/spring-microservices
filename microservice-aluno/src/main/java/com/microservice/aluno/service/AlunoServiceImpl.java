@@ -27,7 +27,7 @@ public class AlunoServiceImpl implements IAlunoService{
     }
 
     @Override
-    public List<Aluno> findByIdCurso(Long idCurso) {
-        return alunoRepository.findAllByCursoId(idCurso);
+    public List<Aluno> findBycursoId(Long cursoId) {
+        return alunoRepository.findAllByCursoId(cursoId);
     }
 }

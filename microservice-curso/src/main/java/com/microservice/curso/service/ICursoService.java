@@ -13,5 +13,5 @@ public interface ICursoService {
 
     void save(Curso curso);
 
-    AlunoByCursoResponse findAlunosByIdCurso(Long idCurso);
+    AlunoByCursoResponse findAlunosBycursoId(Long cursoId);
 }

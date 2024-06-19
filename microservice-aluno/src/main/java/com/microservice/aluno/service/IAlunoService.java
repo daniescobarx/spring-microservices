@@ -12,5 +12,5 @@ public interface IAlunoService {
 
     void save(Aluno aluno);
 
-    List<Aluno> findByIdCurso(Long idCurso);
+    List<Aluno> findBycursoId(Long cursoId);
 }
