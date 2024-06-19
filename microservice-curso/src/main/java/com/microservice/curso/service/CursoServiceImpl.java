@@ -1,11 +1,11 @@
 package com.microservice.curso.service;
 
 import com.microservice.curso.client.EstudanteClient;
-import com.microservice.curso.dto.EstudanteDTO;
+import com.microservice.curso.dto.AlunoDTO;
 import com.microservice.curso.entities.Curso;
+import com.microservice.curso.http.response.AlunoByCursoResponse;
 import com.microservice.curso.http.response.EstudanteByCursoResponse;
 import com.microservice.curso.persistence.ICursoRepository;
-import org.hibernate.query.sql.internal.ParameterRecognizerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,12 +39,12 @@ public class CursoServiceImpl implements ICursoService {
     }
 
     @Override
-    public EstudanteByCursoResponse findEstudantesByIdCurso(Long idCurso) {
+    public AlunoByCursoResponse findEstudantesByIdCurso(Long idCurso) {
         //consulta do curso
         Curso curso = cursoRepository.findById(idCurso).orElse(new Curso());
 
         //estudantes list
-        List<EstudanteDTO> estudanteDTOList = estudanteClient.findAllEstudanteByCurso(idCurso);
+        List<AlunoDTO> estudanteDTOList = estudanteClient.findAllEstudanteByCurso(idCurso);
 
         return EstudanteByCursoResponse.builder()
                 .nomeCurso(curso.getNome())

@@ -26,8 +26,10 @@ public class CursoController {
         return ResponseEntity.ok(cursoService.findAll());
     }
 
+    @GetMapping("/search/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id){
         return ResponseEntity.ok(cursoService.findById(id));
     }
+
 
 }
