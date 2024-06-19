@@ -22,8 +22,8 @@ public class AlunoServiceImpl implements IAlunoService{
     }
 
     @Override
-    public void save(Aluno estudante) {
-        alunoRepository.save(estudante);
+    public void save(Aluno aluno) {
+        alunoRepository.save(aluno);
     }
 
     @Override

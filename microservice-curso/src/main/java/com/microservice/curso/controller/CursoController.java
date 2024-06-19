@@ -17,12 +17,12 @@ public class CursoController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveEstudante(@RequestBody Curso curso){
+    public void saveAluno(@RequestBody Curso curso){
         cursoService.save(curso);
     }
 
     @GetMapping("/all")
-    public ResponseEntity<?> findAllEstudantes(){
+    public ResponseEntity<?> findAllAluno(){
         return ResponseEntity.ok(cursoService.findAll());
     }
 

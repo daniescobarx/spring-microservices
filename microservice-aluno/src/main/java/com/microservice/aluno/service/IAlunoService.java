@@ -10,7 +10,7 @@ public interface IAlunoService {
 
     Aluno findByid(Long id);
 
-    void save(Aluno estudante);
+    void save(Aluno aluno);
 
     List<Aluno> findByIdCurso(Long idCurso);
 }

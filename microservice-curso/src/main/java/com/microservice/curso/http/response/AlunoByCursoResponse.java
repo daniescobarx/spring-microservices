@@ -16,5 +16,5 @@ public class AlunoByCursoResponse {
 
     private String nomeCurso;
     private String professor;
-    private List<AlunoDTO> estudanteDTOList;
+    private List<AlunoDTO> AlunoDTOList;
 }

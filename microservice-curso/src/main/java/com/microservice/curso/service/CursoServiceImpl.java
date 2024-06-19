@@ -43,12 +43,12 @@ public class CursoServiceImpl implements ICursoService {
         Curso curso = cursoRepository.findById(idCurso).orElse(new Curso());
 
         //estudantes list
-        List<AlunoDTO> estudanteDTOList = alunoClient.findAllEstudanteByCurso(idCurso);
+        List<AlunoDTO> alunoDTOList = alunoClient.findAllAlunoByCurso(idCurso);
 
         return AlunoByCursoResponse.builder()
                 .nomeCurso(curso.getNome())
                 .professor(curso.getProfessor())
-                .estudanteDTOList(estudanteDTOList)
+                .AlunoDTOList(alunoDTOList)
                 .build();
     }
 }

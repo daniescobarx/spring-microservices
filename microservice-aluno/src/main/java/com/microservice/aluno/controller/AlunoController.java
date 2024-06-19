@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/estudante")
+@RequestMapping("/api/aluno")
 public class AlunoController {
 
     @Autowired
@@ -16,12 +16,12 @@ public class AlunoController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveEstudante(@RequestBody Aluno estudante){
-        alunoService.save(estudante);
+    public void save(@RequestBody Aluno aluno){
+        alunoService.save(aluno);
     }
 
     @GetMapping("/all")
-    public ResponseEntity<?> findAllEstudante(){
+    public ResponseEntity<?> findAllAluno(){
         return ResponseEntity.ok(alunoService.findAll());
     }
 
